@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SubscriberManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Text subscriberText;  // 登録者数を表示するテキスト
+    private int subscribers = 0;  // 初期登録者数
 
-    // Update is called once per frame
-    void Update()
+    // ボタンがクリックされたときに呼ばれるメソッド
+    public void OnClick()
     {
-        
+        subscribers++;  // クリックごとに1増える
+        subscriberText.text = "Subscribers: " + subscribers.ToString();  // テキストを更新
     }
 }
